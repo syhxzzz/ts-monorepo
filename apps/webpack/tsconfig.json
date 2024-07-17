@@ -1,3 +1,13 @@
 {
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // TODO: this line helps IDE to locate where function `add` is
+      "@nighttrax/foo/*": ["../../packages/foo/*"],
+      // TODO: this helps webpack figure out alias `@foo/src` meaning
+      "@foo/*": ["../../packages/foo/*"]
+    },
+    "noEmit": true
+  }
 }
